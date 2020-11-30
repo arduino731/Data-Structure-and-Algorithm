@@ -1,6 +1,7 @@
 # Data-Structure-and-Algorithm
 How to set up with C and C++ languages 
-* You will learn Big O natation, Recursion stack
+## You will learn 
+* Big O notation, Recursion stack
 * Single/Double Linked List
 * Linear DS Efficiency
 * Tree - BST and AVL
