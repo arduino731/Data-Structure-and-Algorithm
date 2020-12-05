@@ -7,14 +7,14 @@
 /* linked list node for adjacency lists */
 
 typedef struct list {
-    int        v;    /* there is an edge to this vertex */
-    struct list    *next;
+    int v;    /* there is an edge to this vertex */
+    struct list *next;
 } listnode;
 
 typedef struct _graph {
-    int        n;        /* number of vertices */
-    listnode    **adjlists;    /* will be an array of lists */
-    int        *marks;        /* array of Boolean */
+    int n;        /* number of vertices */
+    listnode **adjlists;    /* will be an array of lists */
+    int *marks;        /* array of Boolean */
 } graph;
 
 /* create an empty graph, knowing a priori how many vertices there will be */
