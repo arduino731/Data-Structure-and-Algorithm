@@ -2,7 +2,7 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 
-https://www.geeksforgeeks.org/given-a-linked-list-which-is-sorted-how-will-you-insert-in-sorted-way/
+// https://www.geeksforgeeks.org/given-a-linked-list-which-is-sorted-how-will-you-insert-in-sorted-way/
 
 
 /* Link list node */

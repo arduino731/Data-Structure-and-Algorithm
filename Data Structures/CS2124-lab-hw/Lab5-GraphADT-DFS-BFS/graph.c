@@ -79,36 +79,30 @@ void read_graph(graphT *g, char *filename){
     fclose(fp);
 }
 
-// void insert_edge(graphT *g, int x, int y, int w){
-//     edgenodeT *pe;
-//     struct edgenode* current_edge;
-//     pe = malloc(sizeof(edgenodeT)); // check if NULL
-//     pe->weight = w;
-//     pe->y = y;
-//     // YOU MUST MODIFY THIS FUNCTION SO IT WILL KEEP LINK LIST SORTED
-//     // W.R.T. NEIGHBOR IDs.
-//     pe->next = g->edges[x];
-//     current_edge = g->edges[x];
-//     while(current_edge->next != NULL && current_edge->next->y < pe->y){
-//         pe = pe->next;
-//     }
-//     pe->next = current_edge->next;
-//     current_edge->next = pe;
-
-//     g->edges[x] = pe;
-//     g->degree[x]++;
-//     g->nedges++;
-// }
-
-void insert_edge(graphT *g, int x, int y, int w)
-{
+void insert_edge(graphT *g, int x, int y, int w){
     edgenodeT *pe;
+    edgenodeT  *current_edge;
     pe = malloc(sizeof(edgenodeT)); // check if NULL
     pe->weight = w;
     pe->y = y;
     // YOU MUST MODIFY THIS FUNCTION SO IT WILL KEEP LINK LIST SORTED
     // W.R.T. NEIGHBOR IDs.
+    
+    current_edge = g->edges[x]; // always be the frist edge in the list
+    if(current_edge == NULL ){
+        printf("null\n" );
+    }else{
+        while(current_edge->next->y < current_edge->y){ // search sort less than ascending order from 1,2,3,4,5... 
+            current_edge = current_edge->next;
+            printf("next\n"); // 
+        }
+            pe = current_edge->next;
+            current_edge->next = pe;
+    }
+
+
     pe->next = g->edges[x];
+    // pe->next = g->edges[y];
     g->edges[x] = pe;
     g->degree[x]++;
     g->nedges++;
